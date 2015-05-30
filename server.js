@@ -36,7 +36,7 @@ app.get('/kanye', function(req, res) {
       process.env.accessToken = accessToken;
       process.env.accessTokenSecret = accessTokenSecret;
       twitter.search('show', {
-        q: '@kanyewest'
+        'q': '@kanyewest'
       },
       process.env.accessToken,
       process.env.accessTokenSecret,
