@@ -29,11 +29,33 @@ app.get('/', function(req, res) {
 app.get('/kanye', function(req, res) {
   process.env.oauth_token = req.query('oauth_token'));
   process.env.oauth_verifier = req.query('oauth_verifier'));
-  res.render('index');
+  twitter.getAccessToken(process.env.requestToken, process.env.requestTokenSecret, process.env.oauth_verifier, function(error, accessToken, accessTokenSecret, results) {
+    if (error) {
+      console.log(error);
+    } else {
+      process.env.accessToken = accessToken;
+      process.env.accessTokenSecret = accessTokenSecret;
+      twitter.search('show', {
+        q: '@kanyewest'
+      },
+      process.env.accessToken,
+      process.env.accessTokenSecret,
+      function(error, data, response) {
+        if(error) {
+          console.log(error)
+        }
+        else {
+          var tweets = data;
+          res.render('index', {tweets: tweets});
+        }
+      }
+      )
+    }
+  });
 });
 
 server.listen(port, function() {
-  console.log('server listening on port 3000');
+  console.log('server listening on port: ' + port);
 });
 
 module.exports = server;
