@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
 var twitterAPI = require('node-twitter-api');
+var port = process.env.PORT || 3000;
 
 var twitter = new twitterAPI({
   consumerKey: process.env.consumerKey,
@@ -30,7 +31,9 @@ app.get('/kanye', function(req, res) {
   console.log(req.param('oauth_token'))
 });
 
-server.listen(3000, function() {
+
+
+server.listen(port, function() {
   console.log('server listening on port 3000');
 });
 
