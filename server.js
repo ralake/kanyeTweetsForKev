@@ -27,12 +27,10 @@ app.get('/', function(req, res) {
 });
 
 app.get('/kanye', function(req, res) {
-  console.log('kanye')
-  console.log('reqParams: ', req.param('oauth_token'))
+  process.env.oauth_token = req.query('oauth_token'));
+  process.env.oauth_verifier = req.query('oauth_verifier'));
   res.render('index');
 });
-
-
 
 server.listen(port, function() {
   console.log('server listening on port 3000');
