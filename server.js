@@ -28,7 +28,8 @@ app.get('/', function(req, res) {
 
 app.get('/kanye', function(req, res) {
   console.log('kanye')
-  console.log(req.param('oauth_token'))
+  console.log('reqParams: ', req.params('oauth_token'))
+  res.render('index');
 });
 
 
