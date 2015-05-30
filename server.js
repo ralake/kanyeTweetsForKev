@@ -27,8 +27,8 @@ app.get('/', function(req, res) {
 });
 
 app.get('/kanye', function(req, res) {
-  process.env.oauth_token = req.query('oauth_token');
-  process.env.oauth_verifier = req.query('oauth_verifier');
+  process.env.oauth_token = req.param('oauth_token');
+  process.env.oauth_verifier = req.param('oauth_verifier');
   twitter.getAccessToken(process.env.requestToken, process.env.requestTokenSecret, process.env.oauth_verifier, function(error, accessToken, accessTokenSecret, results) {
     if (error) {
       console.log(error);
