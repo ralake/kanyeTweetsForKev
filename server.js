@@ -21,8 +21,12 @@ app.get('/', function(req, res) {
     include_rts: 'false',
     count: '200'
   }, function(error, tweets, response){
-    res.render(__dirname + '/public/index.ejs', {tweets: tweets});
-    // res.render('index', {tweets: tweets});
+    if(error) {
+      console.log(error)
+    }
+    else {
+      res.render(__dirname + '/public/index.ejs', {tweets: tweets});
+    }
   });
 });
 
