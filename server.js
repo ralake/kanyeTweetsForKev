@@ -18,9 +18,9 @@ app.get('/', function(req, res) {
   twitter.get('statuses/user_timeline', {
     screen_name: 'kanyewest',
     exclude_replies: 'true',
-    include_rts: 'false'
+    include_rts: 'false',
+    count: '200'
   }, function(error, tweets, response){
-    console.log(tweets);
     res.render('index', {tweets: tweets});
   });
 });

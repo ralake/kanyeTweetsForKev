@@ -7,9 +7,12 @@
     <h1>Kev Loves Kanye 4eva</h1>
     <ul>
       <% for(var i = 0; i < tweets.length; i++) { %>
-        <li><%= tweets[i].text %></li>
+        <li>
+          <p><%= tweets[i].text %></p>
+          <p>(<%= tweets[i].created_at %>)</p>
+        </li>
       <% } %>
-    <\ul>
+    </ul>
   </body>
 
 </html>
