@@ -21,7 +21,7 @@ app.get('/', function(req, res) {
     include_rts: 'false'
   }, function(error, tweets, response){
     console.log(tweets);
-    res.render('index', {tweets: tweets})
+    res.render('index', {tweets: tweets});
   });
 });
 
