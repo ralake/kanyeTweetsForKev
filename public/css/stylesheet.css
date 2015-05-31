@@ -1,9 +1,11 @@
 body {
-  font-family: helvetica;
+  font-family: geneva;
+  background-color: #9FDFFF;
 }
 
 h1 {
   text-align: center;
+  margin-top: 36px;
 }
 
 ul li p {
@@ -15,5 +17,12 @@ ul li {
   border: solid 1px grey;
   border-radius: 4px;
   padding: 10px;
+  margin: 8px;
+  background-color: white;
+}
+
+.tweet_created_at {
+  font-size: 12px;
+  font-weight: 100;
 }
 

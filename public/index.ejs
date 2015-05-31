@@ -10,8 +10,8 @@
     <ul>
       <% for(var i = 0; i < tweets.length; i++) { %>
         <li>
-          <p><%= tweets[i].text %></p>
-          <p>(<%= tweets[i].created_at %>)</p>
+          <p class='tweet_text'><%= tweets[i].text %></p>
+          <p class='tweet_created_at'>(<%= tweets[i].created_at %>)</p>
         </li>
       <% } %>
     </ul>
