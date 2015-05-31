@@ -33,6 +33,7 @@ app.set('view engine', 'ejs');
 app.get('/', function(req, res) {
   client.get('search/tweets', {q: '@kanyewest'}, function(error, tweets, response){
     console.log(tweets);
+    res.render('index', {tweets: tweets})
   });
   // res.redirect(twitter.getAuthUrl(process.env.requestToken));
 });
