@@ -9,9 +9,9 @@
 
   <body>
     <h1>Kev Loves Kanye 4eva</h1>
-    <ul>
+    <ul id="kanyeTweetList">
       <% for(var i = 0; i < tweets.length; i++) { %>
-        <li>
+        <li class="kanyeTweet">
           <p class='tweet_text'><%= tweets[i].text %></p>
           <p class='tweet_created_at'>(<%= tweets[i].created_at %>)</p>
         </li>

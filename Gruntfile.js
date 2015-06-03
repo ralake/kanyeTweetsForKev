@@ -14,7 +14,5 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-webdriver');
-  // grunt.registerTask('default', ['mocha']);
   grunt.registerTask('default', ['webdriver']);
-
 };
