@@ -11,9 +11,9 @@
   "devDependencies": {
     "chai": "^2.3.0",
     "grunt": "^0.4.5",
-    "grunt-mocha": "^0.4.12",
-    "jasmine-node": "^1.14.5",
+    "grunt-webdriver": "^0.5.1",
     "mocha": "^2.2.5",
+    "selenium-standalone": "^4.4.2",
     "webdriverio": "^2.4.5"
   },
   "dependencies": {

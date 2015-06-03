@@ -1,15 +1,20 @@
 module.exports = function(grunt) {
-
+  pkg: grunt.file.readJSON('package.json'),
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    mocha: {
-      test: {
-        src: ['specs/**/*.js']
+    webdriver: {
+      kevKanye: {
+        tests: 'specs/features/homepageFeature.js'
+      },
+      options: {
+        desiredCapabilities: {
+          browserName: 'chrome'
+        }
       }
-    }
+    },
   });
 
-  grunt.loadNpmTasks('grunt-mocha');
-  grunt.registerTask('default', ['grunt-mocha']);
+  grunt.loadNpmTasks('grunt-webdriver');
+  // grunt.registerTask('default', ['mocha']);
+  grunt.registerTask('default', ['webdriver']);
 
 };
