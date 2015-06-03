@@ -22,7 +22,7 @@ app.get('/', function(req, res) {
     count: '200'
   }, function(error, tweets, response){
     if(error) {
-      console.log(error)
+      console.error(error)
     }
     else {
       res.render(__dirname + '/public/index.ejs', {tweets: tweets});

@@ -21,4 +21,19 @@ describe('Homepage', function() {
       .call(done);
   });
 
+  it('displays tweets by content, hashtags and time created', function(done) {
+    browser
+      .url('http://localhost:3000')
+      .getHTML('li', function(error, tweets) {
+        tweets.forEach(function(tweet) {
+          if(tweet.indexOf('tweet_hashtag') > -1) {
+            expect(tweet).to.contain('<p class="tweet_text">')
+            expect(tweet).to.contain('<p class="tweet_hashtag">')
+            expect(tweet).to.contain('<p class="tweet_created_at">')
+          }
+        });
+      })
+      .call(done);
+  });
+
 });

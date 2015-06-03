@@ -29,3 +29,8 @@ ul li {
   font-weight: 100;
 }
 
+.tweet_hashtag {
+  font-style: italic;
+  color: grey;
+}
+
